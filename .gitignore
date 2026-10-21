@@ -1,0 +1,21 @@
+# Java / Maven
+backend/target/
+backend/.mvn/timing.properties
+*.class
+*.jar
+*.war
+
+# Node / Vite
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+*.log
+
+# OS
+Thumbs.db
+.DS_Store
