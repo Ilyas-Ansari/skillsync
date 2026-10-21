@@ -1,10 +1,13 @@
 import axios from 'axios';
 
-// In development, Vite proxies '/api' to 'http://localhost:8080/api'
-const API_BASE_URL = import.meta.env.VITE_API_URL || '';
+// Automatically strip any trailing slash from VITE_API_URL
+let rawBase = (import.meta.env.VITE_API_URL || '').trim();
+if (rawBase.endsWith('/')) {
+  rawBase = rawBase.slice(0, -1);
+}
 
 export const api = axios.create({
-  baseURL: API_BASE_URL,
+  baseURL: rawBase,
   headers: {
     'Content-Type': 'application/json',
   },
